@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Countdown-only popup -->
+  <div id="countdownPopup">
+    <div class="countdown-content">
+      <h2>🎂 Birthday Countdown Begins!</h2>
+      <div id="countdownOnly"></div>
+    </div>
+  </div>
+
+  <!-- Wrapper for blur effect -->
+  <div id="blurWrapper">
+    <!-- Main Content -->
+    <div class="container" id="mainContent" style="display: none;">
+      <h1>🎉 Happy Birthday Princess! 🎂</h1>
+      <p class="wish" id="typedText"></p>
+
+      <!-- Slideshow -->
+      <div class="slideshow">
+        <button class="arrow left" onclick="prevSlide()">❮</button>
+        <img src="images/photo1.jpg" id="slideImg" alt="Memory" />
+        <button class="arrow right" onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Birthday Message Popup -->
+  <div id="birthdayPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeBirthdayPopup()">❌</span>
+      <img src="images/teddy.png" alt="Teddy" />
+      <h2>🎉 Happy Birthday Moti! 💖</h2>
+    </div>
+  </div>
+
+  <!-- Fireworks and Hearts -->
+  <canvas id="fireworkCanvas"></canvas>
+  <div id="heart-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

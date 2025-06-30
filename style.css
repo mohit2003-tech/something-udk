@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #0e0d0d;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  background: rgba(106, 14, 114, 0.85);
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 750px;
+  box-shadow: 0 0 25px #2eb6ce;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.wish {
+  font-size: 1.3em;
+  min-height: 160px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+  animation: fadeIn 2s ease;
+}
+
+.slideshow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease;
+}
+
+.slideshow img {
+  width: 100%;
+  max-height: 600px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 15px white;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 105, 180, 0.7);
+  border: none;
+  color: white;
+  font-size: 2em;
+  padding: 5px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+.arrow.left {
+  left: 10px;
+}
+.arrow.right {
+  right: 10px;
+}
+
+#birthdayPopup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px #ff69b4;
+  animation: zoomIn 0.7s ease;
+  position: relative;
+}
+
+.popup-content img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.popup-content h2 {
+  color: #d63384;
+  font-size: 2em;
+}
+
+#countdownPopup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: countdownFade 2s ease-in-out;
+}
+
+.countdown-content {
+  background: pink;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  color: #222;
+  font-size: 1.8em;
+  max-width: 90%;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes countdownFade {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#fireworkCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#heart-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatHeart 8s linear infinite;
+  color: pink;
+  opacity: 0.7;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(100vh) scale(1); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #ff3366;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.blur-background {
+  filter: blur(6px);
+  pointer-events: none;
+}
